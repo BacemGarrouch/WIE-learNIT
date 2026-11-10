@@ -2,7 +2,8 @@
 
 <div align="center">
 
-![WIE-learnIT Logo](logo.png)
+<img width="615" height="518" alt="logo (1)" src="https://github.com/user-attachments/assets/815e64c2-d722-4a05-929c-4c4fa5663273" />
+
 
 **Real-time Tunisian Sign Language Translation for Online Education**
 
