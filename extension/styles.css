@@ -1,0 +1,326 @@
+/* styles.css - WIE-learnIT overlay (violet theme) */
+
+#elearnit-overlay {
+  --wie-violet-900: #2a0845;
+  --wie-violet-700: #6a1b9a;
+  --wie-violet-600: #7c2fbf;
+  --wie-violet-500: #9147d6;
+  --wie-violet-300: #c9a2f0;
+  --wie-surface:    rgba(28, 12, 44, 0.96);
+  --wie-tile:       rgba(255, 255, 255, 0.07);
+  --wie-tile-line:  rgba(255, 255, 255, 0.09);
+
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999999;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  animation: slideInLeft 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-40px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+.elearnit-container {
+  width: 360px;
+  background: var(--wie-surface);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(20, 0, 40, 0.55),
+              0 0 0 1px rgba(201, 162, 240, 0.18);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+}
+
+/* ---------- Header ---------- */
+.elearnit-header {
+  background: linear-gradient(135deg, var(--wie-violet-500) 0%, var(--wie-violet-700) 60%, var(--wie-violet-900) 100%);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.elearnit-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  padding: 5px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-sizing: border-box;
+}
+
+.elearnit-brand {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  line-height: 1.15;
+}
+
+.elearnit-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 0.2px;
+}
+
+.elearnit-subtitle {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.elearnit-close {
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.elearnit-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: rotate(90deg);
+}
+
+/* ---------- Body ---------- */
+.elearnit-content {
+  padding: 14px;
+  color: white;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.elearnit-content::-webkit-scrollbar { width: 6px; }
+.elearnit-content::-webkit-scrollbar-track { background: transparent; }
+.elearnit-content::-webkit-scrollbar-thumb { background: rgba(201, 162, 240, 0.3); border-radius: 3px; }
+.elearnit-content::-webkit-scrollbar-thumb:hover { background: rgba(201, 162, 240, 0.5); }
+
+.elearnit-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  background: var(--wie-tile);
+  border: 1px solid var(--wie-tile-line);
+  border-radius: 999px;
+}
+
+.elearnit-indicator {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.2); }
+}
+
+.elearnit-current-sign {
+  background: linear-gradient(160deg, rgba(145, 71, 214, 0.28), rgba(106, 27, 154, 0.12));
+  border: 1px solid rgba(201, 162, 240, 0.25);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.sign-label,
+.sequence-label,
+.history-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--wie-violet-300);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
+}
+
+.sign-value {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.sign-confidence {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.elearnit-sequence {
+  background: var(--wie-tile);
+  border: 1px solid var(--wie-tile-line);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.sequence-value {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.elearnit-phrase {
+  background: rgba(145, 71, 214, 0.16);
+  border: 1px solid rgba(201, 162, 240, 0.45);
+  border-radius: 14px;
+  padding: 14px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.phrase-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--wie-violet-300);
+  margin-bottom: 8px;
+}
+
+.phrase-value {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.phrase-translation {
+  font-size: 13px;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.phrase-context {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Buttons ---------- */
+.elearnit-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.elearnit-btn:hover { transform: translateY(-1px); }
+.elearnit-btn:focus-visible { outline: 2px solid var(--wie-violet-300); outline-offset: 2px; }
+
+.elearnit-btn-primary {
+  background: linear-gradient(135deg, var(--wie-violet-500), var(--wie-violet-700));
+  box-shadow: 0 4px 12px rgba(124, 47, 191, 0.35);
+}
+
+.elearnit-btn-primary:hover {
+  background: linear-gradient(135deg, #a05ee0, var(--wie-violet-600));
+}
+
+.elearnit-btn-primary:disabled {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+}
+
+.elearnit-btn-warning {
+  background: #f59e0b;
+}
+
+.elearnit-btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.elearnit-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.elearnit-btn-speak {
+  background: linear-gradient(135deg, var(--wie-violet-500), var(--wie-violet-700));
+}
+
+.elearnit-btn-speak:hover {
+  background: linear-gradient(135deg, #a05ee0, var(--wie-violet-600));
+}
+
+.elearnit-btn-speak.speaking {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  animation: pulse 1.5s infinite;
+}
+
+.elearnit-btn-success {
+  background: #10b981;
+}
+
+.elearnit-btn-success:hover {
+  background: #059669;
+}
+
+.elearnit-select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 162, 240, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.elearnit-select:focus {
+  outline: none;
+  border-color: var(--wie-violet-300);
+}
+
+.elearnit-select option {
+  background: #2a0845;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #elearnit-overlay {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .elearnit-container {
+    width: 320px;
+  }
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% { transform: translate(-50%, -50%) translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-50%, -50%) translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translate(-50%, -50%) translateX(10px); }
+}
+
+/* Slide in animation */
+@keyframes slideInRight {
+  from { transform: translateX(400px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
