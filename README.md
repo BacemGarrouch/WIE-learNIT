@@ -704,7 +704,7 @@ If you use this project in your research, please cite:
 
 **WIE-learnIT** • Built with ❤️ for the Tunisian deaf community
 
-*EdNova Challenge 2025*
+*EdNova Challenge 2026*
 
 
 </div>
